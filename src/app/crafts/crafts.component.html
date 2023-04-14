@@ -1,0 +1,45 @@
+<div class="navbar is-dark">
+
+    <div class="navbar-brand">
+        <a class="navbar-item">
+            <img src="assets/logo.jpg">
+        </a>
+    </div>
+    
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" routerLink = "/"> Home </a>
+            <a class="navbar-item" routerLink ="/registration" > Registeration </a>
+            <a class="navbar-item" routerLink ="/aircraftslist" >Air Crafts </a>
+        </div>
+    </div>
+    
+</div>
+<div class="container mt-4" >
+    <h1>Air Craft Table</h1>
+<table class="table">
+    <thead>
+     <h1 *ngIf="!isResultLoaded">Loading.................</h1>      
+    <tr>
+        <th scope="col">Model Name</th>
+        <th scope="col">Serial Number</th>
+        <th scope="col">Regiseration Number</th>  
+        <th scope="col">Regiseration Status</th>  
+        <th scope="col">Regiseration Date</th>  
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let AirCraftItem of AirCraftArray">
+            <td>{{AirCraftItem.modelName  }}</td>
+            <td>{{AirCraftItem.serialNumber }}</td>
+            <td>{{AirCraftItem.registrationNumber }}</td>
+            <td>{{AirCraftItem.registrationStatus }}</td>
+            <td>{{AirCraftItem.registrationDate }}</td>
+
+            <td>
+          <button type="button" class="btn btn-danger" (click)="getAirCrafts()">Show all Air Crafts</button>            
+        </td>
+      </tr>          
+    </tbody>
+  </table>
+</div>

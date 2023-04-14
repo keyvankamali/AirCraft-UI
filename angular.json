@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "/Users/keyvankamali/Projects/AspCoreMVC/my-new-front-end/aircraft/node_modules/bulma/css/bulma.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -100,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "5bcec59f-2e7d-4fb0-9139-7f4644117451"
   }
 }

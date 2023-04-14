@@ -1,0 +1,71 @@
+
+<div class="navbar is-dark">
+
+    <div class="navbar-brand">
+        <a class="navbar-item">
+            <img src="assets/logo.jpg">
+        </a>
+    </div>
+    
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" routerLink = "/"> Home </a>
+            <a class="navbar-item" routerLink ="/registration"> Registeration </a>
+            <a class="navbar-item" routerLink ="/aircraftslist">Air Crafts</a>
+        </div>
+    </div>
+</div>
+       
+
+<section class="section">
+    <div class="container">
+    
+        <form (ngSubmit)="registrationForm()" #contactForm="ngForm">
+
+            <div class="field">
+            <label class="label"> Air Craft Model</label>
+            <input type="text" name="Model Name" class="input" required [(ngModel)]="modelName" #modelInput = "ngModel">
+            <div class="help is-error" *ngIf="modelInput.invalid && modelInput.touched">
+                *required
+            </div>
+            </div>
+
+            <div class="field">
+            <label class="label"> Serial Number</label>
+            <input type="number" name="Serial Number" class="input" required [(ngModel)]="serialNumber" #serialInput = "ngModel">
+            <div class="help is-error" *ngIf="serialInput.invalid && serialInput.touched">
+                *required
+            </div>
+            </div>
+
+            <div class="field">
+            <label class="label"> Registration Number</label>
+            <input type="number" name="Registration Number" class="input" required [(ngModel)]="registrationNumber" #rnumberInput = "ngModel">
+            <div class="help is-error" *ngIf="rnumberInput.invalid && rnumberInput.touched">
+                *required
+            </div>
+            </div>
+
+            <div class="field">
+            <label class="label"> Registration Status</label>
+            <input type="text" name="Registration Stauts" class="input" required [(ngModel)]="registrationStatus" #rstatusInput = "ngModel">
+            <div class="help is-error" *ngIf="rstatusInput.invalid && rstatusInput.touched">
+                *required
+            </div>
+            </div>
+
+            <div class="field">
+            <label class="label"> Registration Date</label>
+            <input type="date" name="Registration Date" class="input" required [(ngModel)]="registrationDate" #rdateInput = "ngModel" >
+            <div class="help is-error" *ngIf="rdateInput.invalid && rdateInput.touched">
+                *required
+            </div>
+            </div>
+
+            <button type="submit" class="button is-large is-danger" [disabled]="contactForm.invalid">Register</button>
+
+
+        </form>
+    </div>
+
+</section>
